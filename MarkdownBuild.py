@@ -1,6 +1,6 @@
 import sublime
 import sublime_plugin
-import markdown_python
+import markdown2
 import os
 import tempfile
 import webbrowser
@@ -19,6 +19,7 @@ class MarkdownBuild(sublime_plugin.WindowCommand):
         open_html_in = s.get("open_html_in", "browser")
         use_css = s.get("use_css", True)
         charset = s.get("charset", "UTF-8")
+        extensions = s.get("extensions", [])
 
         view = self.window.active_view()
         if not view:
@@ -27,7 +28,8 @@ class MarkdownBuild(sublime_plugin.WindowCommand):
         if not file_name:
             return
         contents = view.substr(sublime.Region(0, view.size()))
-        md = markdown_python.markdown(contents)
+        md = markdown2.markdown(contents, extras=extensions)
+
         html = '<html><meta charset="' + charset + '">'
         if use_css:
             css = os.path.join(sublime.packages_path(), 'MarkdownBuild', 'markdown.css')

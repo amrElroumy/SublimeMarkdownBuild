@@ -18,15 +18,16 @@ body{
 }
 
 pre{
-    background-color: #eee;
+    background-color: #f7f7f7;
     padding: 10px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
+    border:1px #ddd solid;
     border-radius: 5px;
     overflow: auto;
 }
+
 code{
-    background-color: #eee;
     padding: 1px 3px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -35,7 +36,7 @@ code{
 li p{
     margin: 0.3em;
 }
-ul > li{
+li{
     list-style-type: disc;
 }
 a:link, a:visited{
@@ -47,29 +48,84 @@ a:hover{
     text-shadow:1px 1px 2px #ccf;
     text-decoration:underline;
 }
-h1{
-    color: #999;
-    font-weight: 400;
-    font-size: 36px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: inherit;
+  font-weight: bold;
+  color: inherit;
+  text-rendering: optimizelegibility;
 }
-h2{
-    border-bottom: 1px dotted #aaa;
-    margin-bottom: 1em;
-    color: #333;
-    font-size: 30px;
+
+h1 {
+  font-size: 30px;
+  line-height: 36px;
+  color: #333;
 }
-h3{
-    color: #666;
-    font-size: 24px;
+
+h2 {
+  font-size: 24px;
+  line-height: 36px;
 }
+
+h3 {
+  font-size: 18px;
+  line-height: 27px;
+}
+
+h4,
+h5,
+h6 {
+  line-height: 18px;
+}
+
 h4 {
-    font-size: 21px;
+  font-size: 14px;
 }
+
 h5 {
-    font-size: 18px;
+  font-size: 12px;
 }
+
+h6 {
+  font-size: 11px;
+  color: #999999;
+  text-transform: uppercase;
+}
+
 .shadow{
     -webkit-box-shadow:0 5px 15px #000;
     -moz-box-shadow:0 5px 15px #000;
-    box-shadow:0 5px 15px #000;     
+    box-shadow:0 5px 15px #000;   
+}
+
+table {
+    width: 100%;
+    margin-bottom: 18px;
+    max-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+tr:hover{
+  background-color: f7f7f7;
+}
+
+td {
+  border-left: 1px solid #dddddd;
+  padding: 8px;
+  line-height: 18px;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid 
+  #ddd;
 }
