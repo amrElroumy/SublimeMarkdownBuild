@@ -3,5 +3,5 @@
     "open_html_in" : "browser",  // possible values are "browser", "sublime", or "both", default is "browser"
     "use_css" : true,
     "charset" : "UTF-8" ,
-    "extensions" : ["wiki-tables", "header-ids", "footnotes"]
+    "extensions" : ["wiki-tables", "header-ids"]
 }

@@ -18,87 +18,193 @@ body{
 }
 
 pre{
-    background-color: #eee;
+    background-color: #f7f7f7;
     padding: 10px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
+    border:1px #ddd solid;
     border-radius: 5px;
     overflow: auto;
 }
+
 code{
-    background-color: #eee;
     padding: 1px 3px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px; 
 }
+
+c{
+    border-radius: 2px; 
+    padding: 4px 4px;
+    color: #d14;
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+    font-size: 13px;
+}
+
 li p{
     margin: 0.3em;
 }
-li{
+
+ul > li{
     list-style-type: disc;
 }
+
 a:link, a:visited{
     color: #33e;
     text-decoration: none;
 }
+
 a:hover{
     color: #00f;
     text-shadow:1px 1px 2px #ccf;
     text-decoration:underline;
 }
-h1{
-    color: #999;
-    font-weight: 400;
-    font-size: 36px;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: inherit;
+  font-weight: bold;
+  color: inherit;
+  text-rendering: optimizelegibility;
 }
-h2{
-    border-bottom: 1px dotted #aaa;
-    margin-bottom: 1em;
-    color: #333;
-    font-size: 30px;
+
+h1 {
+  font-size: 30px;
+  line-height: 36px;
+  color: #333;
 }
-h3{
-    color: #666;
-    font-size: 24px;
+
+h2 {
+  font-size: 24px;
+  line-height: 36px;
 }
+
+h3 {
+  font-size: 18px;
+  line-height: 27px;
+}
+
+h4,
+h5,
+h6 {
+  line-height: 18px;
+}
+
 h4 {
-    font-size: 21px;
+  font-size: 14px;
 }
+
 h5 {
-    font-size: 18px;
+  font-size: 12px;
 }
+
+h6 {
+  font-size: 11px;
+  color: #999999;
+  text-transform: uppercase;
+}
+
 .shadow{
     -webkit-box-shadow:0 5px 15px #000;
     -moz-box-shadow:0 5px 15px #000;
-    box-shadow:0 5px 15px #000;     
+    box-shadow:0 5px 15px #000;   
 }
-</style><body><h1>MarkdownBuild (version 0.4.0)</h1>
+
+table {
+    width: 100%;
+    margin-bottom: 18px;
+    max-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+tr:hover{
+  background-color: f7f7f7;
+}
+
+td {
+  border-left: 1px solid #dddddd;
+  padding: 8px;
+  line-height: 18px;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid 
+  #ddd;
+}
+</style><body><h1 id="markdownbuild-version-040">MarkdownBuild (version 0.4.0)</h1>
+
 <p>This is a Sublime Text plugin for building markdown into html and open it in browser.</p>
-<h2>Installation</h2>
+
+<h2 id="installation">Installation</h2>
+
 <p>Install using Package Control (Recommanded)</p>
+
 <ol>
 <li>I guess most Sublime Text 2 users are using Sublime Package Control. If not, please install it from here <a href="http://wbond.net/sublime_packages/package_control">http://wbond.net/sublime_packages/package_control</a></li>
 <li>Go to Preference &gt; Package Control, and Choose "Install Package"</li>
 <li>Choose the package named "MarkdownBuild" to install it</li>
 </ol>
+
 <p>Install manually</p>
+
 <ol>
 <li>Download the repo</li>
 <li>Copy everything in the repo to a folder named "MarkdownBuild" under the package folder of SublimeText 2 (create it if it doesn't exist)</li>
 </ol>
-<h2>Usage</h2>
+
+<h2 id="usage">Usage</h2>
+
 <p>Originally this plugin is named "SublimeMarkdown" which features automatic bullet points, numbered lists etc. Now the bullet points functionality is extracted to a separated plugin named "SublimeBullet" <a href="https://github.com/erinata/SublimeBullet">https://github.com/erinata/SublimeBullet</a> </p>
+
 <p>Press Ctrl+b to build the markdown file to html and view it in the browser. It used Python-markdown to build the html file but you do not need to have Python installed in order to use this plugin. This package utilizes the Python inside Sublime Text to get the job done.</p>
+
 <p>I also include a Markdown.tmLanguage file so the markdown files' syntax should be highlighted. It works well with the theme "SunBurst" but it should work for other themes too.</p>
-<h2>Customization</h2>
+
+<h2 id="customization">Customization</h2>
+
 <p>You can customize the behaviour of MarkdownBuild in that MarkdownBuild.sublime-settings file.</p>
+
 <ul>
 <li>output_html - set it to true if you want to have an html file generated at the same folder of your markdown file (default: false)</li>
 <li>use_css - set it to false if you do not want to use css in the generated file (default: true)</li>
 <li>charset - the charset in the meta tag of html, (default: "UTF-8")</li>
+<li>extensions - use the extras available with markdown2, (defualt: "wiki-tables", "header-ids")</li>
 </ul>
-<h2>Operating Systems</h2>
+
+<h2 id="building-documents-other-than-markdown">Building documents other than Markdown</h2>
+
+<p>This project only target at building Markdown. But it can be modified to support other formats.</p>
+
+<p>For textile support please see Xkeeper's SublimeTextileBuild <a href="https://github.com/Xkeeper/SublimeTextileBuild">https://github.com/Xkeeper/SublimeTextileBuild</a></p>
+
+<h2 id="contribution">Contribution</h2>
+
+<p>Please fork this project if you want it to support other document formats. In most case the only part of code that you need to change is the line</p>
+
+<pre><code>md = markdown_python.markdown(contents)
+</code></pre>
+
+<p>in the file <code>MarkdownBuild.py</code>. Just change it to the parser you likem, this plugin will build the html and show it in the browser accordingly.</p>
+
+<p>Of course you can rename the files, commands, or css ...... etc. Xkeeper's SublimeTextileBuild <a href="https://github.com/Xkeeper/SublimeTextileBuild">https://github.com/Xkeeper/SublimeTextileBuild</a> is a good example.</p>
+
+<h2 id="operating-systems">Operating Systems</h2>
+
 <p>This package works on Windows, OSX, and Linux</p>
-<h2>License</h2>
-<p>Copyright (C) 2012 Tom Lam. MIT License.</p></body></html>
+
+<h2 id="license">License</h2>
+
+<p>Copyright (C) 2012 Tom Lam. MIT License.</p>
+</body></html>

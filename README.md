@@ -30,6 +30,7 @@ You can customize the behaviour of MarkdownBuild in that MarkdownBuild.sublime-s
 - output_html - set it to true if you want to have an html file generated at the same folder of your markdown file (default: false)
 - use_css - set it to false if you do not want to use css in the generated file (default: true)
 - charset - the charset in the meta tag of html, (default: "UTF-8")
+- extensions - use the extras available with markdown2, (defualt: "wiki-tables", "header-ids")
 
 ## Building documents other than Markdown
 
