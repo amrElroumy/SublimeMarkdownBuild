@@ -1,7 +1,8 @@
 {
-    "output_html" : true,
+    "output_html" : false,
     "open_html_in" : "browser",  // possible values are "browser", "sublime", or "both", default is "browser"
     "use_css" : true,
     "charset" : "UTF-8" ,
+    "markdown_implementation" : 2,  // possible values are 1 and 2
     "extensions" : ["wiki-tables", "header-ids"]
 }

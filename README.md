@@ -28,9 +28,11 @@ I also include a Markdown.tmLanguage file so the markdown files' syntax should b
 You can customize the behaviour of MarkdownBuild in that MarkdownBuild.sublime-settings file.
 
 - output_html - set it to true if you want to have an html file generated at the same folder of your markdown file (default: false)
+- open_html_in - view the generated html file in sublimetext, the browser, or both (default: "browser")
 - use_css - set it to false if you do not want to use css in the generated file (default: true)
-- charset - the charset in the meta tag of html, (default: "UTF-8")
-- extensions - use the extras available with markdown2, (defualt: "wiki-tables", "header-ids")
+- charset - the charset in the meta tag of html (default: "UTF-8")
+- markdown_implementation - pick which implementation of markdown do you prefer: 1 for Markdown or 2 for Markdown2 (default: 2)
+- extensions - use the extras available with markdown2. Check this [wiki](https://github.com/trentm/python-markdown2/wiki/Extras) page for a listing of available extras (defualt: ["wiki-tables", "header-ids"])
 
 ## Building documents other than Markdown
 

@@ -1,9 +1,11 @@
 import sublime
 import sublime_plugin
-import markdown2
 import os
 import tempfile
 import webbrowser
+import markdown2_python.markdown2 as markdown2
+import markdown_python as markdown
+
 #import ctypes
 #from functools import partial
 
@@ -19,7 +21,8 @@ class MarkdownBuild(sublime_plugin.WindowCommand):
         open_html_in = s.get("open_html_in", "browser")
         use_css = s.get("use_css", True)
         charset = s.get("charset", "UTF-8")
-        extensions = s.get("extensions", [])
+        markdown_extensions = s.get("extensions", [])
+        markdown_version = s.get("markdown_implementation", 2)     # Default version [1]
 
         view = self.window.active_view()
         if not view:
@@ -28,7 +31,16 @@ class MarkdownBuild(sublime_plugin.WindowCommand):
         if not file_name:
             return
         contents = view.substr(sublime.Region(0, view.size()))
-        md = markdown2.markdown(contents, extras=extensions)
+
+        # Use the proper markdown version
+        if(markdown_version == 2):
+            md = markdown2.markdown(contents, extras=markdown_extensions)
+        elif (markdown_version == 1):
+            md = markdown.markdown(contents)
+        else:
+            # Invalid Version Number, notify user to update the sublime-settings file
+            sublime.message_dialog("The markdown version in \"MarkdownBuild.sublime-settings\" is invalid.\nAvailable versions: 1, 2")
+            return
 
         html = '<html><meta charset="' + charset + '">'
         if use_css:
@@ -55,7 +67,6 @@ class MarkdownBuild(sublime_plugin.WindowCommand):
             self.window.open_file(output.name)
         else:
             webbrowser.open("file://" + output.name)
-                
         #sublime.set_timeout(partial(ctypes.windll.user32.SwitchToThisWindow,sublime.active_window().hwnd(), 0), 250)
         #sublime.set_timeout(partial(ctypes.windll.user32.ShowWindow,sublime.active_window().hwnd(), 5), 500)
         #sublime.set_timeout(partial(ctypes.windll.user32.SetActiveWindow,sublime.active_window().hwnd()), 500)

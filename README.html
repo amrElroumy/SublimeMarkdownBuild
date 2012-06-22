@@ -17,30 +17,33 @@ body{
     padding: 0 100px 0 100px;
 }
 
-pre{
-    background-color: #f7f7f7;
-    padding: 10px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border:1px #ddd solid;
-    border-radius: 5px;
-    overflow: auto;
-}
-
 code{
-    padding: 1px 3px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px; 
-}
 
-c{
-    border-radius: 2px; 
     padding: 4px 4px;
     color: #d14;
     background-color: #f7f7f9;
     border: 1px solid #e1e1e8;
     font-size: 13px;
+}
+
+pre{
+    background-color: #f7f7f7;
+    padding: 10px;
+    border:1px #ddd solid;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+pre>code{
+    padding: 1px 3px;
+    color: black;
+    background-color: #f7f7f7;
+    border: none;
 }
 
 li p{
@@ -178,9 +181,11 @@ td {
 
 <ul>
 <li>output_html - set it to true if you want to have an html file generated at the same folder of your markdown file (default: false)</li>
+<li>open<em>html</em>in - view the generated html file in sublimetext, the browser, or both (default: "browser")</li>
 <li>use_css - set it to false if you do not want to use css in the generated file (default: true)</li>
-<li>charset - the charset in the meta tag of html, (default: "UTF-8")</li>
-<li>extensions - use the extras available with markdown2, (defualt: "wiki-tables", "header-ids")</li>
+<li>charset - the charset in the meta tag of html (default: "UTF-8")</li>
+<li>markdown_implementation - pick which implementation of markdown do you prefer: 1 for Markdown or 2 for Markdown2 (default: 2)</li>
+<li>extensions - use the extras available with markdown2. Check this <a href="https://github.com/trentm/python-markdown2/wiki/Extras">wiki</a> page for a full listing of available extras (defualt: ["wiki-tables", "header-ids"])</li>
 </ul>
 
 <h2 id="building-documents-other-than-markdown">Building documents other than Markdown</h2>
