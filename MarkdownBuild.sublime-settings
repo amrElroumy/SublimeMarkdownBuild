@@ -4,5 +4,5 @@
     "use_css" : true,
     "charset" : "UTF-8" ,
     "markdown_implementation" : 2,  // possible values are 1 and 2
-    "extensions" : ["wiki-tables", "header-ids"]
+    "extensions" : ["fenced-code-blocks", "wiki-tables", "header-ids"]
 }
